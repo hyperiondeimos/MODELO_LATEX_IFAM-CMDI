@@ -1,0 +1,228 @@
+\chapter{\textbf{\uppercase{Método Proposto no Reconhecimento de Placas Veiculares}}}\label{cap_4}
+
+Nos capítulos anteriores, foram apresentadas diversas tecnologias que servirão como base teórica para o método proposto. Neste capitulo será descrito as abordagens de interligação dos métodos adotados pelos trabalhos revisados a fim de obter a resolução do problema de melhoria de segurança em portões eletrônicos utilizando reconhecimento de padrão.
+
+\section{\uppercase{O Descrição Geral do Sistema}}
+
+O sistema desenvolvido nesse trabalho constitui-se de um sistema de controle de acesso de automóveis onde haja a necessidade do controle de entrada em ambientes reservados. A \autoref{fig:sistema} mostra um diagrama de blocos do funcionamento do sistema que inicia desde a aquisição da imagem até a tomada de decisão do sistema. 
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Diagrama de blocos do sistema.}}   % nome da figura
+	\label{fig:sistema}
+	\includegraphics[width=.9\textwidth]{14.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: Próprio Autor, 2017.}
+\end{figure}
+
+O proposito principal do sistema é fazer o reconhecimento automático de caracteres alfanuméricos na placa de matricula veicular sem a necessidade da intervenção humana para a liberação ao acesso no portão eletrônico. Inicialmente é adquirida uma imagem da placa de um carro pelo sensor ótico provido por uma \emph{webcam}. Que através de algoritmos próprios para tal função, passa para a etapa de pré-processamento da imagem (realce e redução de ruídos), justamente para melhorar a qualidade da imagem obtida. O próximo passo é extrair as características dessa imagem, ou seja, reduzir uma grande quantidade de dados que não sejam relevantes, restando somente a região de interesse. O passo seguinte será a fase de classificação ou reconhecimento do padrão, que nesse caso são os caracteres alfanuméricos.
+
+Após o reconhecimento dos caracteres vem a fase da tomada de decisão onde através de um banco de dados ou uma lista previamente preenchida. Que irá conter dados alfanuméricos de placas que possuem acesso ou não ao ambiente fechado. Essa tomada de decisão aciona o algoritmo de acionamento do motor do portão eletrônico: se na tomada de decisão a resposta for positiva o portão será aberto, o veículo passará pelo portão e acionará um sensor ultrassônico de presença, após a passagem do veículo pelo sensor o portão se fechará, se a resposta for negativa o portão continuará fechado. A \autoref{fig:alpr} ilustra de modo geral o real funcionamento do sistema de reconhecimento de caracteres na placa de um veículo. 
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Sistema baseado em ALPR.}}   % nome da figura
+	\label{fig:alpr}
+	\includegraphics[width=.9\textwidth]{15.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: Próprio Autor, 2017 (adaptado de ~\citeonline{vallapReddy2014}).}
+\end{figure}
+
+\section{\uppercase{Descrição do Algoritmo de Reconhecimento Automático de Placas Veiculares}}
+
+O algoritmo de reconhecimento é basicamente dividido em duas partes: extração da área da placa e reconhecimento dos caracteres na área destacada, que neste caso é a placa do veiculo. Após a aquisição da imagem o primeiro passo na busca pela extração da placa é o pré-processamento.
+
+\subsection{\textbf{Pré-processamento}}
+
+Tido como fase inicial, o pré-processamento tem como objetivo converter a imagem adquirida no sistema de cores RGB e converte-la em tons de cinza como mostrado na~\autoref{fig:tonscinza}. Também é aplicado na imagem um filtro gaussiano que ajuda eliminar possíveis ruídos na imagem.
+
+\begin{figure}[htb]
+	\centering
+	\caption[\footnotesize Conversão da imagem original para tons de cinza.]{\footnotesize Conversão da imagem original para tons de cinza. a) Imagem original; e b) Imagem em tons de cinza.}   % nome da figura
+	\label{fig:tonscinza}
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		%\label{fig:sobel_a}
+		\includegraphics[width=.9\linewidth]{16a.pdf}
+		\caption{ }
+	\end{subfigure}
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		%\label{fig:sobel_b}
+		\includegraphics[width=.9\linewidth]{16b.pdf}
+		\caption{ }
+	\end{subfigure}
+	\\
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: Próprio autor, 2017.}
+\end{figure}
+
+Após o processo de conversão da imagem original para tons de cinza a imagem é limiarizada (\textit{Thresholded}) criando uma imagem binarizada realçando os contornos na imagem, conforme a \autoref{fig:thresh} demonstra.
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Imagem Limiarizada/Binarizada.}}   % nome da figura
+	\label{fig:thresh}
+	\includegraphics[width=.7\textwidth]{17.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: Próprio autor, 2017.}
+\end{figure}
+
+\subsection{\textbf{Extração da Placa}}
+
+Após a fase inicial de pré-processamento, a imagem se submete a fase de extração da área da placa. Aplica-se na imagem o algoritmo de detecção de contornos deixando a imagem com os contornos mais realçados conforme a \autoref{fig:contorno} mostra.
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Imagem após a aplicação do algoritmo de detecção de contornos.}}   % nome da figura
+	\label{fig:contorno}
+	\includegraphics[width=.7\textwidth]{18.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: Próprio autor, 2017.}
+\end{figure}
+
+Depois que os contornos são realçados o algoritmo detecta um conjunto de \emph{pixels} interconectados. O algoritmo processa essa área do conjunto de \emph{pixels} descartando os \emph{pixels} irrelevantes na imagem, conforme a \autoref{fig:pixels}.
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Imagem processada com conjunto de \textit{pixels} interconectados.}}   % nome da figura
+	\label{fig:pixels}
+	\includegraphics[width=.5\textwidth]{19.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: Próprio autor, 2017.}
+\end{figure}
+
+O algoritmo continua com o processo de descarte dos \emph{pixels} irrelevantes deixando apenas a região de interesse da placa ficando somente a região dos caracteres. Então, é aplicado um retângulo vermelho delimitador cortando a imagem naquela região e como resultado, a extração da placa como pode ser visto na \autoref{fig:region}.
+
+\begin{figure}[htb]
+	\centering
+	\caption[\footnotesize Área de interesse da imagem.]{\footnotesize Área de interesse da imagem. a) Construção do retangulo vermelho sobre a região da placa; e b) Placa extraída da imagem.}   % nome da figura
+	\label{fig:region}
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		%\label{fig:sobel_a}
+		\includegraphics[width=1\linewidth]{20a.pdf}
+		\caption{ }
+	\end{subfigure}
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		%\label{fig:sobel_b}
+		\includegraphics[width=1\linewidth]{20b.pdf}
+		\caption{ }
+	\end{subfigure}
+	\\
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: Próprio autor, 2017.}
+\end{figure}
+
+\subsection{\textbf{Classificação (Reconhecimento dos Caracteres)}}
+
+Nessa etapa, depois que a área da placa foi extraída. O algoritmo refaz novamente os passos anteriores de pré-processamento, limiarização, detecção dos contornos dos caracteres, para separar individualmente os caracteres. O algoritmo aplica o método de \textit{bounding box} onde a caixa delimitadora separa os caracteres individualmente, segundo \citeonline{babu2016}: ``Quando a região especificada é rotulada, ela determina as coordenadas de canto da caixa delimitadora e também sua altura e largura''. A \autoref{fig:del_chars} apresenta a aplicação do método \textit{bounding box} na imagem.
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Caixa delimitadora nos caracteres.}}   % nome da figura
+	\label{fig:del_chars}
+	\includegraphics[width=.5\textwidth]{21.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: Próprio autor, 2017.}
+\end{figure}
+
+Após esta etapa, é carregado o algoritmo de reconhecimento de caracteres, aonde o classificador escolhido foi o classificador kNN, que segundo \citeonline{rosebrock2016}, é o mais simples algoritmo de classificação de imagem e aprendizado de máquina.
+
+O classificador kNN passou pela fase de treinamento com um conjunto de caracteres. Onde cada caractere alfanumérico de diferentes fontes, foram reconhecidos e testados em um sistema a parte, a qual constitui o dicionário de características. A \autoref{fig:trainknn} ilustra de um modo geral como funciona o classificador kNN através de seu treinamento até o reconhecimento dos caracteres ao qual ele foi treinado.
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Ilustração do funcionamento de treino do classificador kNN.}}   % nome da figura
+	\label{fig:trainknn}
+	\includegraphics[width=.7\textwidth]{22.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: Próprio autor, 2017 (adaptado de~\citeonline{rosebrock2016}).}
+\end{figure}
+
+Depois de passar por todos os processos anteriores, os caracteres finalmente são reconhecidos pelo classificador e impressos na imagem, o resultado pode ser visto na \autoref{fig:print_chars}.
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Caracteres reconhecidos e inseridos na imagem.}}   % nome da figura
+	\label{fig:print_chars}
+	\includegraphics[width=.6\textwidth]{23.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: Próprio autor, 2017.}
+\end{figure}
+
+\section{\uppercase{Algoritmo de acionamento do portão eletrônico}}
+
+Neste algoritmo é utilizado como \textit{input} o resultado do algoritmo de reconhecimento de caracteres, que a nível de teste do protótipo será comparado a uma lista de placas de carro. Onde, caso os caracteres reconhecidos estejam na lista, o portão que, normalmente estará fechado, será acionado através do motor que o abrirá permitindo a passagem do veículo. Logo após a entrada do portão o sensor ultrassônico de presença é acionado medindo a distância entre o veículo e o sensor. Assim que o veículo se deslocar e passar pelo sensor, o sensor passa a medir uma distância muito maior do que a anterior e dá a permissão de comando para acionar o motor de forma que feche o portão novamente. Caso contrário, se a placa não esteja na lista, o portão permanece fechado.
+
+\section{\uppercase{Protótipo de um portão eletrônico para simular o funcionamento do sistema}}
+
+O protótipo deste projeto foi desenvolvido com base em um sistema de portão eletrônico utilizado em condomínios sendo movimentado por um motor DC para a abertura do portão e fechado por um sensor ultrassônico de presença, que verifica através de uma distância estipulada se o automóvel já passou (ou não) pelo portão. O protótipo corresponde a uma miniatura do sistema real. 
+
+A \autoref{fig:proto1} demostra o protótipo utilizado para simular o funcionamento do motor e do portão eletrônico. Foi utilizado um drive de CD-ROM, já que o mesmo tem as características necessárias de um portão eletrônico real (a bandeja de CD será utilizada como um portão eletrônico e, a mesma, já contém o circuito e controle por um motor).
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Protótipo do sistema.}}   % nome da figura
+	\label{fig:proto1}
+	\includegraphics[width=.7\textwidth]{24.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: Próprio autor, 2017.}
+\end{figure}
+
+%Para simular o funcionamento do motor e do portão eletrônico, foi utilizado um drive de CD-ROM, já que o mesmo tem as características necessárias de um portão eletrônico real (a bandeja de CD será utilizada como um portão eletrônico e, a mesma, já contem o circuito e controle por um motor).
+
+A unidade controladora que executa além do processamento das imagens e o reconhecimento dos caracteres, executa o acionamento do motor e o funcionamento dos sensores é o Raspberry Pi.
+
+Em suma, o custo base desse protótipo está listado na \autoref{tab:precos}.
+
+\begin{table}[htb]
+	\ABNTEXfontereduzida
+	\caption[\footnotesize Preços dos equipamentos de Hardware investidos no projeto]{\footnotesize Preços dos equipamentos de Hardware investidos no projeto.}
+	\label{tab:precos}
+	\centering
+	\begin{tabular}{c|c|c|c|c}
+		\hline
+		\textbf{\#} & \textbf{Equipamento}  & \textbf{Quantidade}  & \textbf{Preço Unitário} & \textbf{Preço Total}\\
+		\hline \hline
+		1 & Raspberry Pi 3 Model B & 1 & $ R\$ 299,00 $ & $ R\$ 299,00 $ \\
+		\hline
+		2 & \textit{Webcam} & 1 & $ R\$ 259,00 $ & $ R\$ 259,00 $ \\
+		\hline
+		3 & Cartão de memória de 8GB classe 10 & 1 & $ R\$ 49,00 $ & $ R\$ 49,00 $ \\
+		\hline
+		4 & Motor DC & 1 & $ R\$ 58,00 $ & $ R\$ 58,00 $ \\
+		\hline
+		5 & Fonte de alimentação 5VDC & 1 & $ R\$ 9,00 $ & $ R\$ 9,00 $ \\
+		\hline
+		6 & Sensor Ultrassônico & 1 & $ R\$ 30,00 $ & $ R\$ 30,00 $ \\
+		\hline 
+		7 & Driver de ponte H & 1 & $ R\$ 25,00 $ & $ R\$ 25,00 $ \\
+		\hline  
+		8 & Protoboard 20x20 & 1 & $ R\$ 20,00 $ & $ R\$ 20,00 $ \\
+		\hline 
+		9 & Resistores de $1k\Omega$ & 5 & $ R\$ 0,50 $ & $ R\$ 2,50 $ \\
+		\hline
+		10 & \textit{Jumpers}/Cabos & 50 & $ R\$ 0,30 $ & $ R\$ 15,00 $ \\ 
+		\hline \hline
+		\multicolumn{4}{r}{\textbf{Total}} & $ R\$ 766,50 $ \\
+		\hline
+	\end{tabular}
+	\legend{Fonte: Próprio autor, 2017}
+\end{table}
+
+\section{\uppercase{Considerações Finais}}
+
+Neste capitulo foi visto os passos utilizados para compor o protótipo e o projeto em si. Apesar de que alguns itens saíram bem mais caros do que o esperado, como por exemplo a \textit{webcam}. No começo foi comprado uma genérica VGA no valor de $R\$ 32,99$, a mesma se mostrou bem ineficiente em relação ao tempo de acionamento do sensor, criando um assincronismo muito grande entre o processamento do Raspberry e o sensor da câmera. Por mais que o código tenha sido refeito e otimizado para a câmera, a solução foi comprar uma câmera melhor, que no caso foi uma Logitech C525, e que encareceu um pouco o projeto.
+
+Contudo, os resultados podem ser conferidos no próximo capitulo.

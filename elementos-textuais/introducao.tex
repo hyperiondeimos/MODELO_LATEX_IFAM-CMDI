@@ -1,0 +1,27 @@
+% ----------------------------------------------------------
+% Introdução (exemplo de capítulo sem numeração, mas presente no Sumário)
+% ----------------------------------------------------------
+\chapter*[Introdução]{\textbf{\uppercase{Introdução}}}
+\addcontentsline{toc}{chapter}{Introdução}
+% ----------------------------------------------------------
+
+
+O avanço tecnológico possibilita um expressivo desenvolvimento de aplicações que auxiliam o homem e as vezes até o substituem em algumas tarefas diárias. Esses avanços surgiram da necessidade do homem fazer com que as máquinas pudessem replicar habilidades humanas simplificando e automatizando tarefas complexas \cite{forsyth2012}.
+
+Uma das habilidades humanas essenciais para o cotidiano e maximização do trabalho, é a visão. Porém, para uma máquina emular a visão humana se torna muito complexo devido a vários fatores externos como luminosidade, oclusão, distância e algoritmos que somente o cérebro humano, até o momento é capaz de replicar. Estes processos acabam dificultando a compreensão do conteúdo da imagem adquirida pela máquina.  O campo da ciência que estuda a forma como as maquinas enxergam e compreendem o mundo exterior é chamado de Visão Computacional.
+ 
+Segundo \cite{dawson2014}, a Visão Computacional é a análise automática de imagens e vídeos por computadores, a fim de obter alguma compreensão do mundo real e é inspirada nas capacidades do sistema de visão humana.  Um dos campos da visão computacional que pode-se utilizar é o reconhecimento de padrões. Para \citeonline{theodoridis2009}, o reconhecimento de padrões é a disciplina cujo objetivo é a classificação de objetos em uma série de categorias ou classes (caracteres). Esses objetos podem ser imagens ou formas de onda de sinal ou qualquer tipo de medidas que precisam ser classificadas.
+
+De forma geral a Visão Computacional e o reconhecimento de padrão buscam prover as máquinas conhecimento suficiente para auxiliar o homem em suas necessidades de identificar objetos automaticamente sem que, para isso, possa ter a intervenção humana.
+
+Varias aplicações nos dias de hoje utilizam as tecnologias providas pela visão computacional e pelo reconhecimento de padrões \cite{duda2001}. Exemplos são: detecção de pessoas em certos ambientes, reconhecimento de peças e medidas por câmera, reconhecimento facial, entre outros. Um processo que chama atenção também, é o uso dessa tecnologia para o reconhecimento de veículos, por exemplo. Devido ao crescimento de frotas de veículos particulares e a facilidade em ter acesso a um \cite{dia2016,reis2014}, cresce também a demanda pelo controle e a identificação desses veículos. Visto que também a criminalidade e a falta de segurança de acesso a condomínios privados vem aumentando \cite{dia2017,prado2017,ama2017}. Para tentar diminuir esse problema e aumentar a segurança, o reconhecimento automático de placas veiculares faz-se necessário pela melhoria de segurança em determinados ambientes através do controle de acesso de quem entra e trafega em determinados locais, por exemplo.
+
+Contudo, visto que podem existir vários problemas com relação a determinação dessas placas devido a não-uniformidade da cena (isto é, problemas de iluminação, oclusão, entre outros), deve-se treinar um sistema computacional que possa, com certa eficácia, encontrar uma placa e reconhece-la. Visto que isso é possível através de sistemas de fácil acesso e atuais \cite{luka2014}. 
+
+%Diante desse contexto abordado um fator importante é que uma máquina dificilmente terá falhas em suas tarefas se for bem treinada para executar o que lhe foi definido. Portanto será uma máquina capaz de identificar uma placa de carro sem que haja a necessidade humana de auxilia-la?
+
+Há de se tentar resolver estes problemas citados através do desenvolvimento de um sistema que seja capaz de identificar de forma automática os caracteres contidos nas placas de matricula veiculares. O resultado do reconhecimento dos caracteres será a base para a tomada de decisão do sistema.
+
+Por isso, este trabalho busca construir um sistema que seja capaz de reconhecer e identificar a placa de um carro e os caracteres da placa de um veiculo e permitir que o mesmo possa, ou não, acessar um estacionamento privativo. O autor, através de várias pesquisas, buscou completar essa tarefa através da combinação de ferramentas com o \emph{framework} OpenCV, a linguagem de programação \emph{Python} e o microcomputador \emph{Raspberry Pi} executando o sistema operacional \emph{Raspbian}. Justamente para prover um sistema simples, relativamente barato e de livre acesso a possíveis replicações pelos leitores.
+
+

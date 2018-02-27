@@ -1,0 +1,90 @@
+%% abtex2-modelo-include-comandos.tex, v-1.9.2 laurocesar
+%% Copyright 2012-2014 by abnTeX2 group at http://abntex2.googlecode.com/ 
+%%
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%%   http://www.latex-project.org/lppl.txt
+%% and version 1.3 or later is part of all distributions of LaTeX
+%% version 2005/12/01 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%% 
+%% The Current Maintainer of this work is the abnTeX2 team, led
+%% by Lauro César Araujo. Further information are available on 
+%% http://abntex2.googlecode.com/
+%%
+%% This work consists of the files abntex2-modelo-include-comandos.tex
+%% and abntex2-modelo-img-marca.pdf
+%%
+
+% ---
+% Este capítulo, utilizado por diferentes exemplos do abnTeX2, ilustra o uso de
+% comandos do abnTeX2 e de LaTeX.
+% ---
+ 
+\chapter{\textbf{\uppercase{Contextualização}}}\label{cap_1}
+
+Devido ao crescimento populacional e suas necessidades, as frotas de veículos também estão aumentando exponencialmente, isso reflete diretamente na necessidade de se ter um maior acesso ao controle de automóveis. Com a crescente demanda pelo aumento de segurança em locais fechados e um maior controle no acesso de seus moradores, torna-se hoje em dia imprescindível que a segurança eletrônica seja automatizada, rápida e eficaz na identificação de seus moradores. Além da observação e verificação humana, o sistema de reconhecimento de veículos através da identificação da sua placa pode aumentar a segurança. Por isso, é de suma importância que sistemas de reconhecimento automático de placas de carro sejam implementados em ambientes reservados e particulares e com um melhor controle de acesso para seus moradores, onde a intervenção humana seja minimizada ou quase não necessária nesse contexto, apenas a supervisão. 
+
+A tecnologia atual tornou-se barata, competitiva e compacta, então torna-se fácil implementar sistemas de certa robustez em dispositivos com essas características, como é o caso do microcomputador Raspberry Pi utilizado nesse trabalho. Com sistemas e Hardwares \textit{Open Source} se popularizando, torna-se barato implementar sistemas dessa natureza aumentando o nível de segurança e controle de veículos que trafegam dentro de condomínios.
+
+% ---
+\section{\uppercase{Justificativa}}
+% ---
+
+O reconhecimento automático de placa de matricula de carros é uma tarefa importante que visa automatizar o controle de acesso em portões eletrônicos. Esse tipo de aplicação já é muito utilizado em muitos setores da sociedade, segundo \citeonline{babu2016}: ``A detecção de placas de matrícula pode ser usada em muitas aplicações, tais como controle de tráfego, controle de velocidade, identificação dos carros roubados, portões de pedágio, aplicação de segurança, etc.''.
+
+Então, com base neste pretexto, o autor buscou um método simples e automático para tentar aumentar a segurança de sistemas que usam cancelas para acesso a determinados ambientes de estacionamento veicular. Como a aplicação utilizará basicamente uma câmera e algoritmos, o custo e a replicação do experimento são de fácil e livre acesso ao todos. Apenas algumas peças de hardware devem ser adicionadas ao projeto final em ordem de completar o processo como um produto completo para qualquer situação (dentro do escopo de acesso veicular).
+
+% ---
+\section{\uppercase{Motivação}}
+% ---
+
+Este trabalho foi motivado pela espera na identificação de um veículo e seu condutor de forma manual em duas portarias num determinado ambiente reservado, onde se faz a necessidade da criação de aplicações automatizadas para o controle de acesso a lugares reservados de modo rápido, preciso e quase sem a necessidade da intervenção humana através de uma forma eficiente de se obter informação ao acesso de veículos. Visto que, é comum nos dias de hoje haverem acessos indevidos a condomínios e até mesmo a residências urbanas por estranhos sem autorização e ladrões. O que intriga o autor, é que tecnologias com esta citada no trabalho, já são bem comuns em cidades do Brasil a anos e na sua cidade, Manaus-AM, é raro ver esse tipo de adicional a segurança, mesmo em condomínios e prédios relativamente novos.
+
+% ---
+\section{\uppercase{Problemática}}
+% ---
+
+A demora na identificação de um veículo e seu condutor feito de forma manual e acessos indevidos em ambientes fechados e um sistema de controle eficiente, são problemas que o autor tenta buscar a solução através do um desenvolvimento possível de um sistema de reconhecimento automático de placas veiculares, que é uma tecnologia bastante usada hoje em dia pela computação, mas pouco explorada por acadêmicos de engenharia elétrica. Por ser, geralmente, de código aberto e gratuito, os algoritmos que são utilizados na Visão Computacional podem solucionar o problema com eficácia, na visão do autor.  
+
+% ---
+\section{\uppercase{Hipóteses}}
+% ---
+
+\begin{itemize}
+	\item A utilização de uma \textit{Webcam} de baixo custo poderá afetar na resolução da imagem adquirida. Contudo, é possível adicionar algumas etapas de processamento digital de imagens com uso de filtros de correção de cor e de iluminação para maximizar a qualidade da imagem;
+	\item Poderá haver erros na identificação dos caracteres nas placas dos carros, devido ao fato que nenhum método é perfeito. O algoritmo de treinamento de identificação dos caracteres pode não reconhecer corretamente ou haver alguma distorção na imagem que impossibilite o reconhecimento de algum caractere. Ainda lembrando que, dependendo da fonte utilizada na placa, o treinamento de caracteres pode perder muito a taxa de acerto. A fonte deve ser levada em conta aqui;
+	\item Pode ser possível que, mesmo com todas as soluções apontadas, a câmera acabe não reconhecendo a placa devido alguns problemas na cena. Por isso, a câmera ficará colocada em posição bem favorável para captura correta da imagem da placa. Talvez, seja necessário ajustar o ambiente para melhorar a captura, como iluminação artificial e posicionamento da câmera para evitar oclusões.
+\end{itemize}
+
+% ---
+\section{\uppercase{Objetivos}}
+% ---
+Serão apresentados os seguintes objetivos deste trabalho a partir das análises realizadas inicialmente para essas abordagens.
+
+\subsection{\textbf{Objetivo Geral}}
+
+Desenvolver um sistema de reconhecimento automático da placas de matricula veicular para aumentar a segurança e o controle de acesso de veículos em ambientes reservados. 
+
+\subsection{\textbf{Objetivos Específicos}}
+
+\begin{itemize}
+	\item [\textbf{a.}] Aumentar a performance do algoritmo de detecção de caracteres em ordem de diminuir os erros;
+	\item [\textbf{b.}] Desenvolver um protótipo de um portão eletrônico para simular o funcionamento do sistema e construir o algoritmo de acionamento do mesmo;
+	\item [\textbf{c.}] Realizar a comparação de custo de construção do protótipo do sistema com outros sistemas prontos no mercado para verificar se o valor de acesso se mantem baixo e de fácil acesso.
+\end{itemize}
+
+\section{\uppercase{Organização do Trabalho}}
+
+Este trabalho está estruturado em ordem sequencial com uma breve descrição dos conteúdos dos capítulos:
+
+\begin{itemize}
+	\item \textbf{Fundamentação Teórica:} é o capitulo 2 deste trabalho. Apresenta conceitos e definições de assuntos relacionados a visão computacional e suas etapas. São estudadas as teorias relacionados ao processo de reconhecimento da imagem, das ferramentas (aplicativos e as bibliotecas utilizadas do OpenCV) e do hardware empregado neste trabalho;
+	\item \textbf{Trabalhos Correlatos:} é o capitulo 3 deste trabalho. Mostra vários trabalhos que foram abordados na área de visão computacional que serviram de embasamento para a busca de uma solução no reconhecimento automático de placas veiculares utilizando reconhecimento de padrões;
+	\item \textbf{Método Proposto:} é o capitulo 4 deste trabalho. Aqui é abordado a forma de como chegar a solução do objetivo geral proposto, apresentando os métodos para alcançar a resolução desejada; 
+	\item \textbf{Resultados:} é o capitulo 5 deste trabalho. Apresenta os resultados obtidos após a conclusão do objetivo geral e do específicos que foram concluídos, falando também das suas possíveis limitações;
+	\item \textbf{Conclusão e projetos futuros:} finaliza o trabalho trazendo abordagens sobre o sucesso dos resultados obtidos e possíveis falhas nos objetivos específicos que não foram alcançados, sugerindo uma melhoria no método proposto e trabalhos futuros que venham agregar alguma possível melhoria ao projeto.
+\end{itemize}

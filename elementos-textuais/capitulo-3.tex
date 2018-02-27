@@ -1,0 +1,317 @@
+\chapter{\textbf{\uppercase{Trabalhos Correlatos}}}\label{cap_3}
+
+Neste capítulo, será apresentado trabalhos correlacionados com esse trabalho, onde diversas abordagens de autores que já publicaram suas experiencias no tópico abordado, servirão de embasamento metodológico para a solução das etapas aqui empregadas no processo do reconhecimento automático das placas veiculares. Os trabalhos selecionados apresentam diversas formas de se chegar a uma possível solução com uso da visão computacional como ferramenta principal.
+
+A pratica da revisão sistemática contribuiu bastante para que se possa adquirir um certo grau de conhecimento através de um acervo de artigos científicos pelo qual classificou-se as abordagens mais pertinentes, a fim de prover uma base sólida sobre o experimento e estudos que já foram feitos por autores previamente antes deste trabalho. Além de prover o que ainda pode ser melhorado e contribuir para comunidade cientifica como um todo.
+
+\section{\uppercase{Categorização dos Trabalhos Analisados}}
+
+\subsection{\textbf{Enumeração dos Trabalhos Analisados}}
+
+Nos artigos analisados foram identificadas as quatro características principais que foram classificadas como categorias e várias subdivisões por métodos adotados pelos autores.
+
+Os artigos, \emph{a priori}, foram enumerados para uma melhor organização do trabalho conforme foram lidos e analisados. Na \autoref{tab:correla} mostra como foi organizado cada linha através dos autores, tema e ano de publicação.
+
+\begin{table}[htb]
+	\ABNTEXfontereduzida
+	\caption[\footnotesize Enumeração dos trabalhos analisados.]{\footnotesize Enumeração dos trabalhos analisados.}
+	\label{tab:correla}
+	\begin{tabular}{c|c|p{6cm}|c}
+		\hline
+		\textbf{\#} & \textbf{Autor(es)} & \textbf{Tema} & \textbf{Ano}\\
+		\hline \hline
+		1 & \cite{agarwal2016} & An Efficient Algorithm for Automatic Car Plate Detection \& Recognition & 2016 \\
+		\hline
+		2 & \cite{jia2016} & Design Flow of Vehicle License Plate Reader Based on RGB Color Extractor & 2016 \\
+		\hline
+		3 & \cite{babu2016} & Vehicle Number Plate Detection and Recognition using Bounding Box Method & 2016 \\
+		\hline
+		4 & \cite{george2016} & VNPR system using Artificial Neural Network & 2016 \\
+		\hline
+		5 & \cite{khan2016} & Car Number Plate Recognition (CNPR) System Using Multiple Template Matching & 2016 \\
+		\hline
+		6 & \cite{ikeizumie2014} & An Effective Sequence of Operations for License Plates Recognition & 2014 \\
+		\hline
+		7 & \cite{trentini2010} & Reconhecimento Automático de Placas de Veículos & 2010 \\
+		\hline
+		8 & \cite{islam2015} & Automatic Vehicle Number Plate Recognition Using	Structured Elements & 2015 \\
+		\hline
+		9 & \cite{khan2016comparison} & Comparison of Various Edge Detection Filters for ANPR & 2016 \\
+		\hline
+		10 & \cite{ha2016} & License Plate Automatic Recognition Based on Edge Detection & 2016 \\
+		\hline
+		11 & \cite{saleem2016} & Automatic License Plate Recognition Using Extracted Features & 2016 \\
+		\hline
+		12 & \cite{sen2014} & Advanced License Plate Recognition System for	Car Parking & 2014 \\
+		\hline
+		13 & \cite{singh2015} & ANPR Indian system using Surveillance Cameras & 2015 \\
+		\hline \hline
+	\end{tabular}
+	\legend{\footnotesize Fonte: Próprio autor, 2016.}
+\end{table} 
+
+\subsection{\textbf{Quantização dos Métodos Aplicados}}
+
+Nesta seção, a \autoref{tab:quant} apresenta a frequência das ocorrências dos métodos utilizados ao alongo do processo de reconhecimento de padrão, que no casso especifico desse trabalho será reconhecer os caracteres contidos nas placas veiculares. As frequências dos métodos adotados servirão de parâmetros para que se possa fazer a escolha da metodologia que mais se assemelha ao objetivo desse trabalho.
+
+Para que o leitor possa entender melhor a \autoref{tab:quant}, o autor categorizou os processos conforme os tópicos das principais fases da metodologia adotada pelos autores de cada trabalho analisado.
+
+Logo as categorias ou etapas foram nomeadas da seguinte forma: 
+
+\begin{itemize}
+	\item PP = Pré-Processamento;
+	\item DLP = Detecção e localização da Placa;
+	\item SECPC = Segmentação e Extração de Características da Placa e dos Caracteres; e
+	\item RC = Reconhecimento de Caracteres.
+\end{itemize}
+
+Os algoritmos e técnicas empregados em cada etapa foram relacionados as suas respectivas categorias dentro de cada trabalho.
+
+\begin{table}[htb]
+	\ABNTEXfontereduzida
+	\caption[\footnotesize Quantização dos métodos adotados.]{\footnotesize Quantização dos métodos adotados em cada artigo analisado.}
+	\label{tab:quant}
+	\begin{tabular}{p{1.7cm}|p{2.7cm}|p{2cm}|p{.1cm}|p{.1cm}|p{.1cm}|p{.1cm}|p{.1cm}|p{.1cm}|p{.1cm}|p{.1cm}|p{.1cm}|p{.1cm}|p{.1cm}|p{.1cm}|p{.1cm}|p{.7cm}|p{.4cm}}
+		\hline
+		\multirow{2}{*}{\textbf{Categorias}} & \multicolumn{2}{c}{\multirow{2}{*}{\textbf{Subcategorias}}} & \multicolumn{13}{|c|}{\textbf{Artigos}} & \multirow{2}{*}{\textbf{Total}} & \multirow{2}{*}{\textbf{\%}} \\
+		\cline{4-16}
+		& & & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & & \\
+		\hline \hline
+		\multirow{4}{*}{PP} & \multicolumn{2}{p{4.7cm}|}{Conversão de RGB para Escala de Cinza} & X & X & X & X & X & X & X & X & X & X & X & X & X & 13 & 100\% \\
+		\cline{2-18}
+		& Melhoria de Contraste & \textit{Histogram Equalization} &  & X &  &  &  &  &  &  &  & X &  &  &  & 2 & 15\% \\
+		\cline{2-18}
+		& \multirow{2}{*}{Redução de Ruído} & \textit{Median Filter} & & X & X &  &  &  & X &  & X & X &  &  &  & 5 & 38\% \\
+		\cline{3-18}
+		& & \textit{Gaussian Filter} & &  &  &  &  & X &  &  &  &  &  &  & X & 2 & 15\% \\
+		\cline{2-18}
+		& Rotação da Imagem & \textit{Hough Line Transformation} & & X &  &  &  &  &  &  &  &  &  &  &  & 1 & 8\% \\
+		\hline
+		\multirow{2}{*}{DLP} & \multirow{2}{*}{\textit{Edge Detection}} & \textit{Canny Edge Detection} & X &  &  &  &  &  & X & X &  & X &  & X &  & 5 & 38\% \\
+		& & \textit{Sobel Edge Filter} &  &  & X &  & X &  &  &  &  &  & X &  & X & 4 & 31\% \\
+		\cline{2-18}
+		& \textit{Extract Plate} & \textit{Pixel Statistics Method} & & X &  &  &  &  &  &  &  &  &  &  &  & 1 & 8\% \\
+		\hline
+		\multirow{6}{*}{SECPC} & \multicolumn{2}{p{4.7cm}|}{Operações Morfológicas de Erosão e Dilatação} & X & X &  &  &  & X & X & X &  &  &  &  & X & 6 & 46\% \\
+		\cline{2-18}
+		& \multicolumn{2}{p{4.7cm}|}{\textit{Robert Operator}} &  & X &  &  &  &  &  &  &  &  &  &  &  & 1 & 8\% \\
+		\cline{2-18}
+		& \multicolumn{2}{p{4.7cm}|}{\textit{Global Threshold Method}} &  & X &  &  &  &  &  &  &  &  &  &  &  & 1 & 8\% \\
+		\cline{2-18}
+		& \multicolumn{2}{p{4.7cm}|}{\textit{Bounding Box Method}} & X &  & X &  &  &  &  &  &  &  &  &  &  & 2 & 15\% \\
+		\cline{2-18}
+		& \multicolumn{2}{p{4.7cm}|}{\textit{Projection Method}} &  &  &  & X &  & X &  &  &  &  &  &  &  & 2 & 15\% \\
+		\cline{2-18}
+		& \multicolumn{2}{p{4.7cm}|}{\textit{Otsu Method}} &  &  &  & X &  & X &  &  &  &  &  &  & X & 3 & 23\% \\
+		\hline
+		\multirow{6}{*}{RC} & \multicolumn{2}{p{4.7cm}|}{Template Matching} & X &  & X &  & X &  &  &  & X & X & X &  &  & 6 & 46\% \\
+		\cline{2-18}
+		& \multicolumn{2}{p{4.7cm}|}{\textit{Tesseract Tool}} &  & X &  &  &  &  &  &  &  &  &  &  &  & 1 & 8\% \\
+		\cline{2-18}
+		& \multicolumn{2}{p{4.7cm}|}{ANN} &  &  &  & X &  &  &  &  &  &  &  &  &  & 1 & 8\% \\
+		\cline{2-18}
+		& \multicolumn{2}{p{4.7cm}|}{\textit{Random Trees or Random Forest}} &  &  &  &  &  &  & X &  &  &  &  &  &  & 1 & 8\% \\
+		\cline{2-18}
+		& \multicolumn{2}{p{4.7cm}|}{SVM} &  &  &  &  &  &  &  &  &  &  &  &  & X & 1 & 8\% \\
+		\cline{2-18}
+		& \multicolumn{2}{p{4.7cm}|}{SIFT} &  &  &  &  &  & X &  &  &  &  &  &  &  & 1 & 8\% \\
+		\hline \hline
+	\end{tabular}
+	\legend{\footnotesize Fonte: Próprio autor, 2016.}
+\end{table} 
+
+Observou-se estatisticamente através da \autoref{tab:quant} quais os métodos mais utilizados em cada parte do processo de reconhecimento automático de placas veiculares. No Pré-processamento, a conversão da imagem no sistema RGB para escala de tons de cinza foi de 100\%, o uso do \textit{Median Filter} para remoção de ruídos foi de 38\% e na melhoria de contraste o \textit{Histogram Equalization} teve 15\% de utilização nos artigos revisados.
+
+No processo de detecção e localização da placa o método mais usado foi o \textit{Canny Edge detection} com 38\% de uso, seguido pelo filtro Sobel com 31\%. Na parte de segmentação de placa ou caracteres as operações morfológicas tiveram uma frequência de 46\% seguido pelo método Otsu de 23\%. Já na fase de Reconhecimento de caracteres o algoritmo de \textit{Template Matching} teve incidência de uso na faixa de 46\%. 
+
+Todo esse levantamento teve como base os treze artigos lidos e revisados, a fim de encontrar um algoritmo de sistema de reconhecimento de caracteres em placas veiculares que possa contribuir para a realização deste trabalho.
+
+\section{\uppercase{Descrição das metodologias aplicadas nos trabalhos correlacionados}}
+
+\subsection{\textbf{Pré-Processamento}}
+
+A maioria dos trabalhos analisados iniciam suas etapas de pré-processamento das imagens através da aquisição da imagem por algum dispositivo ótico, geralmente por uma câmera de vigilância ou um \textit{webcam} passando em seguida para a próxima etapa. Dentro do processo de pré-processamento que é a fase de melhoria da imagem adquirida no sistema de cores RGB.
+
+Em seu trabalho, \citeonline{agarwal2016}, para aumentar a performance de processamento do sistema, a fase inicial do pré-processamento teve duas etapas. Foi realizada a conversão da imagem capturada no sistema de cores RGB para tons de cinza. Os ruídos na imagem original são inevitáveis, porém para eliminar esses ruídos utilizou-se o filtro de média. A imagem da placa apresentava ruídos característicos de sal e pimenta. Para remover esse ruído, o filtro de média é mais recomendado. A \autoref{fig:pre_proc} mostra essa fase de pré-processamento na imagem da placa.
+
+\begin{figure}[htb]
+	\centering
+	\caption[\footnotesize Etapas do Pré-processamento de uma Imagem da Placa Veicular.]{\footnotesize Etapas do pré-processamento de uma imagem da placa veicular. a) Imagem Original; b) Imagem original em tons de Cinza; c) Imagem filtrada com o Filtro de Media.}   % nome da figura
+	\label{fig:pre_proc}
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=.7\linewidth]{6a.pdf}
+		\caption{ }
+	\end{subfigure}
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=.7\linewidth]{6b.pdf}
+		\caption{ }
+	\end{subfigure}
+	\\
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=.7\linewidth]{6c.pdf}
+		\caption{ }
+	\end{subfigure}
+	\\
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte:~\citeonline{agarwal2016}.}
+\end{figure}
+
+O trabalho de \citeonline{jia2016} também aplica o filtro de média para a remoção efetiva de ruídos, visando aumentar e melhorar a visibilidade da imagem após a conversão da imagem em tons de cinza. Para \citeonline{babu2016} expõe que pode usar o filtro de média para eliminar outros ruídos além do de sal e pimenta, mas não só eliminar o ruído, mas concentra-se também na alta frequência.
+
+Em seu trabalho, \citeonline{singh2015} utilizou um filtro diferente para a remoção de ruído e suavização da imagem, o filtro gaussiano para borrar a imagem e suavizar ruídos de alta frequência. Esse filtro é muito utilizado na literatura para os mesmos fins que o filtro de média.   
+
+\subsection{\textbf{Detecção e Localização da Placa}}
+
+A detecção da placa é a tarefa mais desafiadora dessa abordagem, pois a placa está contida em uma pequena região da imagem, mas pode ser diferenciada pelas suas características como Cor, forma retangular e presença de caracteres. Dado uma imagem de entrada, o alvo principal da detecção é marcar uma área com probabilidade máxima de ter caracteres e validar a placa como verdadeira \cite{agarwal2016}.
+
+Em seu trabalho, \cite{agarwal2016} explica que a detecção e a localização da placa são feitas em dois estágios:
+
+\begin{itemize}
+	\item[a)] detecção das bordas;
+	\item[b)] extração da placa.
+\end{itemize}
+
+O método de detecção de bordas é realizado através do algoritmo de limiarização de Canny, que quando aplicado à imagem pré-processada, destaca todas as bordas da imagem, onde a imagem resultante depois de aplicar o método de detecção Canny é uma imagem binária com bordas realçadas. A \autoref{fig:canny} mostra a imagem após ser aplicado o algoritmo de Canny.
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Imagem após a detecção de borda.}}   % nome da figura
+	\label{fig:canny}
+	\includegraphics[width=.6\textwidth]{7.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte:~\citeonline{agarwal2016}.}
+\end{figure}
+
+Para identificar a área da placa, \cite{islam2015} também utilizaram o algoritmo de Canny e para classificar todo o ruído do fundo da placa e conservar a área da placa na imagem utilizou-se o filtro de média.
+
+Na parte de extração da placa, \citeonline{agarwal2016} abordam o seguinte método de extrair todos os componentes conectados na imagem e preencher todos os buracos na imagem. Todos os buracos são preenchidos com cor branca. A \autoref{fig:placa_ext} mostra como foi feita a extração da área da placa após a localização das bordas ou contornos.
+
+\begin{figure}[htb]
+	\centering
+	\caption[\footnotesize Extração da placa após a detecção de contorno.]{\footnotesize Extração da Placa após a detecção de contorno. a) Área da placa preenchida na cor branca; e b) Área da placa extraída após o processo de preenchimento.}   % nome da figura
+	\label{fig:placa_ext}
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{8a.pdf}
+		\caption{ }
+	\end{subfigure}
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=.9\linewidth]{8b.pdf}
+		\caption{ }
+	\end{subfigure}
+	\\
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte:~\citeonline{agarwal2016}.}
+\end{figure}
+
+Na extração da área da placa, \cite{islam2015} aplicaram operações morfológicas para remover objetos irrelevantes na imagem e por último, dilatação e erosão foram realizadas afim de extrair as áreas desejadas da placa a partir da imagem processada.
+
+Outro método muito utilizado nos artigos revisados, foi o método do algoritmo de Sobel.  onde \citeonline{babu2016} utilizaram esse método pelo fato de que o algoritmo identifica os contornos quando há uma nítida variação na intensidade do gradiente na imagem. 
+
+Depois de ter feito o processo de conversão da imagem para tons de cinza e converter novamente a imagem para preto e branco para que imagem ficasse somente com duas cores, foi feito a remoção dos ruídos e \emph{pixels} de valores baixos, a fim de obter uma imagem mais refinada para se ter uma visão mais limpa dos caracteres na imagem. Assim como \citeonline{khan2016,khan2016comparison} aplicaram o algoritmo de Sobel para verificar a localização exata da placa no carro e preenchendo a forma retangular conforme a \autoref{fig:sobel}a e removerá outros componentes conectados abaixo de 1000 \emph{pixels} conforme a \autoref{fig:sobel}b.
+
+\begin{figure}[htb]
+	\centering
+	\caption[\footnotesize Aplicação do Algoritmo de Sobel.]{\footnotesize Aplicação do algoritmo de Sobel. a) Imagem limiarizada por Sobel; e b) Remoção de \emph{pixels}.}   % nome da figura
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\label{fig:sobel_a}
+		\includegraphics[width=.9\linewidth]{9a.pdf}
+		\caption{ }
+	\end{subfigure}
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\label{fig:sobel_b}
+		\includegraphics[width=.9\linewidth]{9b.pdf}
+		\caption{ }
+	\end{subfigure}
+	\\
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	\label{fig:sobel}
+	{\footnotesize Fonte:~\citeonline{khan2016}.}
+\end{figure}
+
+No processo de localização da placa, o trabalho de \cite{saleem2016,sen2014,ha2016} após ter convertido a imagem em escala de cinza, a imagem resultante é dilatada com elemento estruturante ou máscara. Este processo melhora as regiões brilhantes rodeadas por regiões escuras ou ao contrário, para regiões escuras rodeadas por regiões brilhantes. Assim, na presença de contornos, o efeito de dilatação da imagem é maximizado, facilitando emprego do algoritmo de Sobel.
+
+\subsection{\textbf{Segmentação de Caracteres}} 
+
+Após a fase de localização e extração da área de interesse (placa), inicia-se a fase de segmentação dos caracteres. Conforme \cite{george2016}, a segmentação dos caracteres é um passo importante, pois a precisão do reconhecimento do objeto depende da precisão da segmentação. O método utilizado por \citeonline{george2016} foi o método da projeção, a fim de extrair cada caractere. A localização inicial e final, superior e inferior da placa deve ser determinada. A adição das colunas individuais e das linhas individuais da placa extraída passa a projeção horizontal e vertical. O método da projeção é mostrado na \autoref{fig:projecao_method} e os caracteres segmentados são mostrados na \autoref{fig:char_seg}.
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Projeção horizontal e vertical da imagem.}}   % nome da figura
+	\label{fig:projecao_method}
+	\includegraphics[width=.6\textwidth]{10.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte:~\citeonline{george2016}.}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Caracteres segmentados.}}   % nome da figura
+	\label{fig:char_seg}
+	\includegraphics[width=.6\textwidth]{11.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte:~\citeonline{george2016}.}
+\end{figure}
+
+O trabalho de \citeonline{ikeizumie2014} também aborda o método da projeção, onde na verdade os autores descrevem duas técnicas de segmentação: o método da projeção e a detecção de contornos. O método da projeção é feito da seguinte forma: uma cadeia de caracteres é enquadrada através da projeção horizontal e vertical para haver uma separação de acordo com as suas regiões minimas da projeção vertical da imagem resultante.
+
+Após feito o processo citado há um enquadramento dos caracteres pelas projeções. Os caracteres são separados de acordo com as suas regiões minimas da projeção vertical. \cite{ikeizumie2014} ainda descrevem que uma das grandes dificuldades de segmentar é quando ocorre uma junção indesejada causada pela proximidade entre os caracteres, onde a solução é averiguar se a largura do objeto encontrado é maior do que o máximo permitido para um caractere. Caso haja uma largura maior que o padrão o objeto é dividido ao meio.
+
+A fim de encontrar elementos conexos, para cada \emph{pixel} $p$ de coordenadas $(x,y)$, seus 8 vizinhos são analisados. Esta conectividade está ligada a relação entre os \emph{pixels} adjacentes. Assim, os objetos com altura e largura similares a de um caractere são delimitados assim como na \autoref{fig:char_del}. 
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Caracteres delimitados através da detecção de contornos.}}   % nome da figura
+	\label{fig:char_del}
+	\includegraphics[width=.6\textwidth]{12.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte:~\citeonline{ikeizumie2014}.}
+\end{figure}
+
+Se sete objetos iguais a um caractere forem encontrados, a região dos sete é selecionada para o processo posterior onde os caracteres serão recortados para o reconhecimento. 
+
+\subsection{\textbf{Reconhecimento de Caracteres}}
+
+Após todos os processos importantes que foram descritos ao longo deste capitulo, a fase crucial para um sistema de reconhecimento automático de placas veiculares será então abordada. A fase de reconhecimento dos caracteres depende de que as outras fases anteriores sejam realizadas da melhor forma possível. Sendo assim, será visto algumas abordagens de autores já citados ao longo do capítulo.
+
+Dos trabalhos realizados e citados, 46\% utilizaram o método de correspondência por padrão (\textit{Template Matching}) para a fase final de cada sistema. \cite{agarwal2016} argumentam que o \textit{Template Matching} é adequado quando o desvio padrão do modelo em comparação a imagem de origem for insignificante. A imagem é passada através do processo de correspondência (\textit{Matching Process}) que é realizado \emph{pixel} a \emph{pixel}. O modelo de comparação percorre todas as posições possíveis na imagem de origem resultando um valor de índice numérico que mostra o quanto o modelo sem compara a imagem original naquela posição.
+
+A \autoref{fig:char_comp} mostra um modelo usado para a comparação no tamanho de 42x24 \emph{pixels}.
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Modelo usado para comparação.}}   % nome da figura
+	\label{fig:char_comp}
+	\includegraphics[width=.6\textwidth]{13.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte:~\citeonline{agarwal2016}.}
+\end{figure}
+
+Segundo \citeonline{agarwal2016}, esta técnica de correspondência é aplicada para a classificação de objetos, para a identificação de caracteres impressos, números e pequenos outros objetos. Neste método, os modelos e a imagem de origem são correlacionados. A correlação é a medida do grau de associação entre duas variáveis. A variável é basicamente os valores de \emph{pixels} correspondentes em ambas as imagens, isto é, imagem de origem e modelo. O valor de correspondência fica entre $-1$ e $+1$ aonde, quanto maior o valor de correlação, mais forte a relação entre o modelo e a imagem de origem.
+
+No trabalho \citeonline{george2016} utilizaram \textit{Artificial Neural Networking} (ANN) para melhorar a performance do reconhecimento de caractere, já que o método de correspondência por padrão (\textit{Template Matching}) pode reconhecer somente os caracteres que mostram a similaridade com o modelo padrão criado para cada caractere no banco de dados.
+
+Para \citeonline{trentini2010}, o algoritmo \textit{Random Trees}, também chamado pela sua coletividade de \textit{Random Forests}, o qual é um classificador baseado em árvores de decisão e que pode reconhecer os padrões de várias classes ao mesmo tempo, é composto por inúmeras árvores, formando assim florestas de decisão. Para seu trabalho esse foi o melhor método encontrado.
+
+Outro algoritmo importante e muito utilizado no campo da visão computacional em reconhecimento de caracteres é o \textit{Tesseract tool}. \cite{jia2016} utilizaram o \textit{Tesseract}, mas em principio para seu trabalho o método de reconhecimento utilizado foi o de correspondência de padrões (\textit{Template Matching}). Porém, a taxa de reconhecimento foi de apenas 95\%, ainda tendo alguns problemas, como diferenças insuficientes entre algumas letras e dígitos para o computador reconhecer. Sendo assim foi adotado o algoritmo \textit{Tesseract}, que é um algoritmo de reconhecimento de caractere de código aberto da Google.
+
+Isso ajuda no treinamento do processo de reconhecimento a partir dos caracteres extraídos para convertê-los em um texto que será facilmente reconhecido pelo computador. Como o classificador adaptativo da ferramenta \textit{Tesseract} recebeu alguns dados de treinamento, os caracteres extraídos podem ser convertidos em texto e reconhecidos corretamente.
+
+\section{\uppercase{Considerações Finais}}
+
+Neste capitulo foram vistos muitos detalhes que poderão auxiliar na solução de problemas que possam surgir na metodologia adotada.
+
+A análise desses trabalhos contribuíram bastante para um melhor entendimento das técnicas e etapas de reconhecimento automático de placas veiculares.
+
+Por ser uma das primeiras etapas do processo de melhoria de segurança em portões eletrônicos usando reconhecimento de padrões, foi primordial se aprofundar nas técnicas envolvidas para esse fim.

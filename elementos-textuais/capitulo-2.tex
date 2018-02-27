@@ -1,0 +1,250 @@
+\chapter{\textbf{\uppercase{Fundamentação Teórica}}}\label{cap_2}
+
+Neste capitulo será contextualizado as informações teóricas para a compreensão deste projeto. O capitulo deve prover ao leitor a base teórica para compreender os conceitos que serão melhor explicados ao longo deste capítulo para poder familiarizar com os futuros tópicos vistos em outros capítulos.
+
+\section{\uppercase{Visão Computacional}}
+
+A visão computacional busca igualar ou simular a visão humana na interpretação das cenas do mundo real. Segundo~\citeonline{dawson2014}, a visão computacional é a análise automática de imagens e vídeos com o intuito de obter alguma informação ou dado do ambiente que cerca o sensor de visão. Assim, a visão computacional prove a capacidade de extrair informações de uma imagem que possa servir de base direta ou indireta em tomadas de decisões futuras, como por exemplo orientação de um robô com sensores visuais.
+
+Segundo~\citeonline{forsyth2012}, a visão computacional tem uma grande variedade de aplicações, tanto antigas (por exemplo, robô móvel de navegação, inspeção industrial e inteligência militar) como novas (por exemplo, interação com computadores humanos, recuperação de imagens em bibliotecas digitais, análise de imagens médicas e a renderização realista de cenas em computação gráfica).
+
+Um exemplo de aplicação de visão computacional seria o reconhecimento de caracteres em uma placa de um carro conforme demonstra a~\autoref{fig:id_placa} mostra e que através de uma série de processos na imagem chega-se a um resultado a ser avaliado (tomada de decisão). 
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Identificação dos Caracteres da Placa Veicular.}}   % nome da figura
+	\label{fig:id_placa}
+	\includegraphics[width=.7\textwidth]{1.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: \citeonline{araujo2015}.}
+\end{figure}
+
+\section{\uppercase{Etapas do Processo}}
+
+Para se chegar a um resultado satisfatório no reconhecimento de imagem, se faz necessário que a imagem passe por processos importantes iniciados pela aquisição da imagens (ou vídeos), pré-processamento, segmentação, seleção e extração de características e classificação, até chegar ao resultado. A descrição dos processos é mostrada na \autoref{fig:etapas} conforme a sequência de processamento. Estes passos serão melhor explanados ao longo deste capitulo.
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Etapas do processo para o reconhecimento de imagens.}}   % nome da figura
+	\label{fig:etapas}
+	\includegraphics[width=.7\textwidth]{2.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: Próprio Autor, 2016 (Adaptado de~\cite{juliana2016}).}
+\end{figure}
+
+\subsection{\textbf{Pré-processamento}}
+
+A imagem ou vídeo adquirido em meio as condições do processo de aquisição pode conter imperfeições. No intuito de utilizar essa imagem nas demais fases do processo. De acordo com~\cite{pedrini2017} que afirma:
+
+\begin{citacao}
+	
+	A etapa de pré-processamento visa melhorar a qualidade da imagem por meio da aplicação de técnicas para atenuação de ruído, correção de contraste ou brilho e suavização de determinadas propriedades da imagem.
+	
+\end{citacao}
+	 
+
+\subsection{\textbf{Segmentação}}
+
+Para~\citeonline{forsyth2012}, a ideia central de segmentação é coletar \emph{pixels} ou elementos de padrão em representações sumárias que enfatizam propriedades importantes, interessantes e distintivas. Assim, conforme~\citeonline{sobral2003} a segmentação tem por objetivo em regiões ou objetos, frequentemente ocasionando não uma imagem como resultado, mas um conjunto de regiões ou objetos.
+
+Segundo~\citeonline{agarwal2016}, o processo de segmentação pode ser feito em duas abordagens distintas: por descontinuidade, que seria a segmentação de bordas e contornos ou; por similaridade que seria, binarização, crescimento de regiões, divisão e junção de regiões. A~\autoref{fig:proc_gradiente} ilustra um exemplo do processo de segmentação por descontinuidade.
+
+\begin{figure}[htb]
+	\centering
+	\caption[\footnotesize Processo de Segmentação por Descontinuidade.]{\footnotesize Processo de Segmentação por Descontinuidade. a) Imagem de entrada; b) $G_y$ Componente do gradiente vertical; c) $G_x$ Componente do Gradiente horizontal; d) Resultado dos contornos ligados entre si.}   % nome da figura
+	\label{fig:proc_gradiente}
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=.7\linewidth]{3a.pdf}
+		\caption{ }
+	\end{subfigure}
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=.7\linewidth]{3b.pdf}
+		\caption{ }
+	\end{subfigure}
+	\\
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=.7\linewidth]{3c.pdf}
+		\caption{ }
+	\end{subfigure}
+	\begin{subfigure}{.4\textwidth}
+		\centering
+		\includegraphics[width=.7\linewidth]{3d.pdf}
+		\caption{ }
+	\end{subfigure}
+	\\
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte:~\citeonline{sobral2003}.}
+\end{figure}
+
+\subsection{\textbf{Seleção e Extração de Características}}
+
+Seleção de características também é chamada seleção de variável ou seleção de atributo. É a seleção automática de atributos e seus dados que são mais relevantes para o problema de modelagem, é diferente da redução de dimensionalidade \cite{brownlee2014}. Os dois métodos procuram reduzir o número de atributos no conjunto de dados, mas um método de redução de dimensionalidade o faz criando novas combinações de atributos, onde como métodos de seleção de recursos incluem e excluem atributos presentes nos dados sem alterá-los \cite{brownlee2014}.
+
+Existem dois métodos principais para reduzir a dimensionalidade: seleção de características e extração de características. Na seleção de características, tem-se o interesse de encontrar $k$ características das dimensões $d$ que dão mais informações e descartamos as outras dimensões $(d - k)$ \cite{alpaydin2014}.
+
+Segundo \citeonline{alpaydin2014}, esses métodos podem ser supervisionados ou não supervisionados dependendo se eles usam ou não as informações de saída. 
+
+\subsection{\textbf{Classificação ou Reconhecimento de Padrão}}
+
+Reconhecimento de padrão de acordo com \citeonline{agarwal2016} é o processo de classificação de entrada de dados dentro de uma classe sendo essa classificação baseada em dois métodos aprendizagem.
+
+Segundo \cite{bianchi2006}, há duas formas de conhecimento de padrão: classificação supervisionada; onde o padrão de entrada tem sua identificação Projetada para uma classe pré-definida ou classificação não supervisionada; onde o padrão é estabelecido por uma fronteira de classe desconhecida. 
+
+Para \citeonline{duda2001}, uma das fases do reconhecimento padrão é a classificação de objetos, caracterizando e agrupando por categorias o objeto de interesse ao modelo, podendo ter um treinamento anterior ou não para a classificação.
+
+Uma dificuldade no reconhecimento de padrão consiste na tarefa de categorização, onde as classes são definidas pelo projetista do sistema (classificação supervisionada) ou são ``aprendidas'' de acordo com a similaridade dos padrões (classificação não supervisionada) \cite{bianchi2006}.
+
+Com o crescente avanço tecnológico, cresceu também o interesse em classificação de padrões, por permitir que aplicações computacionais possam auxiliar em diversas áreas do conhecimento. A \autoref{tab:padrao} mostra exemplos de aplicações com classes de padrões.
+
+ \begin{table}[htb]
+	\ABNTEXfontereduzida
+	\caption[\footnotesize Exemplos de aplicações para o reconhecimento de padrões.]{\footnotesize Exemplos de aplicações para o reconhecimento de padrões.}
+	\label{tab:padrao}
+	\begin{tabular}{p{3cm}|p{3cm}|p{4cm}|p{4cm}}
+		\hline
+		\textbf{Área} & \textbf{Utilização} & \textbf{Entradas de Dados} & \textbf{Classes Padrão} \\
+		\hline \hline
+		\textbf{Bioinformática} & Análise de sequência	& DNA/Sequência de Proteína	& Tipos conhecidos de genes/padrões \\
+		\hline
+		\textbf{Mineração de dados} & Busca por padrões Significantes & Pontos em um espaço multidimensional & Compactar e separar grupos \\
+		\hline
+		\textbf{Classificação de documentos} & Busca na Internet & Documento texto & Categorias semânticas (negócios, entre outros) \\
+		\hline
+		\textbf{Análise de documento de imagem} & Máquina de leitura para cegos & Imagem de Documentos & Caracteres alfanuméricos, palavras \\
+		\hline
+		\textbf{Automação industrial} & Inspeção de placas de circuito impresso & Intensidade ou alcance de imagem & Natureza do produto (defeituosa ou não) \\ 
+		\hline
+		\textbf{Recuperação de base de dados multimídia} & Busca pela Internet & \textit{Video Clip} & Gêneros de vídeo (p.e. ação, diálogo, entre outros.) \\
+		\hline
+		\textbf{Reconhecimento biométrico} & Identificação pessoal & Face, íris, impressão digital & Usuários autorizados para controle de acesso \\
+		\hline
+		\textbf{Sensoriamento remoto} & Prognóstico da produção de colheita & Imagem multiespectral & Categorias de aproveitamento de terra, desenvolvimento de padrões de colheita \\
+		\hline
+		\textbf{Reconhecimento de voz} & Inquérito por telefone sem assistência de operador & Voz em forma de onda & Palavras faladas \\
+		\hline \hline
+	\end{tabular}
+	\legend{\footnotesize Fonte: Próprio autor, 2017 (adaptado de \cite{bianchi2006}).}
+\end{table} 
+
+\section{\uppercase{Classificador}}
+
+\subsection{\textbf{k-Nearest Neighbors (kNN)}}
+
+Segundo~\citeonline{rosebrock2016}, kNN é de longe o mais simples algoritmo de classificação de imagem e aprendizado de máquina. A operação simplesmente compara um objeto a ser classificado com todos os objetos em uma série de treinamentos com rótulos de classes já conhecidas e tenta indicar o voto para qual classe atribuir o objeto \cite{solem2012}.
+
+Para~\citeonline{luiza2005}, kNN é um classificador que tem como base de aprendizado à similaridade. O Conjunto de treinamento é formado por vetores $n$-dimensionais e cada elemento deste conjunto representa um ponto no espaço $n$-dimensional. Afim de obter a classe de um elemento que seja desvinculado ao conjunto de treinamento, o algoritmo busca por $K$ elementos do conjunto de treinamento tenham a menor distância. Ainda sobre as palavras diretas de \cite{luiza2005}: ``Estes $K$ elementos são chamados de $K$-vizinhos mais próximos (kNN). Verifica-se quais são as classes desses $K$ vizinhos e a classe mais frequente será atribuída à classe do elemento desconhecido.''
+
+A seguir, apresenta-se as métricas comumente utilizadas no cálculo da distância entre dois pontos. O método utilizado com mais frequência é a distância Euclidiana \autoref{eq:euclid}. Outras métricas como as de Manhattan e de Minkowski, são apontadas nas \autoref{eq:manh} e \autoref{eq:mink}, respectivamente. O ultimo é uma generalização das duas distâncias anteriores.
+
+Seja uma imagem $I$ de tamanho $X \times Y$ e $X=(x_1,x_2,x_3,\ldots,x_n)$ e $Y=(y_1,y_2,y_3,\ldots,y_n)$, dois conjuntos de pontos no plano $\Re^k$, onde $k$ é 2 se a imagem for bidimensional.
+
+\begin{equation} \label{eq:euclid}
+D(x,y) = \sqrt{(x_1-y_1)^2 + (x_2-y_2)^2 + \ldots + (x_n - y_n)^2}
+\end{equation}
+
+\begin{equation} \label{eq:manh}
+D(x,y) = |x_1-y_1|+|x_2-y_2|+\ldots+|x_n-y_n|
+\end{equation}
+
+\begin{equation} \label{eq:mink}
+D(x,y) = \sqrt[q]{|x_1-y_1|^q + |x_2-y_2|^q + \ldots + |x_n-y_n|^q} \rightarrow q \in \aleph
+\end{equation}
+
+Quando $q = 1$, a distância de Minkowski representa a distância de Manhattan e quando $q = 2$, a distância Euclidiana.
+
+A distância Euclidiana ponderada também pode ser representada conforme~\citeonline{luiza2005} cita, se cada variável possuir um peso relativo à sua importância:
+
+\begin{citacao}
+	
+	Pesos também podem ser aplicados às distâncias Manhattan e Minkowski. O kNN é um classificador que possui apenas um parâmetro livre (o número de K-vizinhos) que é controlado pelo usuário com o objetivo de obter uma melhor classificação. Este processo de classificação pode ser computacionalmente exaustivo se considerado um conjunto com muitos dados. Para determinadas aplicações, no entanto, o processo é bem aceitável.	
+
+\end{citacao}
+
+A \autoref{fig:knn_ex} mostra um exemplo de classificação pelo algoritmo kNN com as seguintes descrições:
+
+\begin{itemize}
+	\item Dois atributos;
+	\item Três classes;
+	\item Dois pontos desconhecidos (1 e 2); e
+	\item Deseja-se classificar estes dois pontos através dos 7 vizinhos mais próximos.
+\end{itemize}
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Classificação pelo método kNN.}}   % nome da figura
+	\label{fig:knn_ex}
+	\includegraphics[width=.7\textwidth]{4.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte:~\citeonline{luiza2005}.}
+\end{figure}
+
+\section{\uppercase{Framework OpenCV}}
+
+OpenCV é um conjunto de bibliotecas \emph{Open-Source} de visão computacional e de aprendizagem de máquina \cite{pavalenko2017} que ajuda a cientistas e pesquisadores na área de processamento digital de imagens (PDI) a resolver problemas usando uma linguagem de programação livre e que possui uma comunidade enorme em termos de exemplos e aplicações educacionais e até mesmo, comerciais.
+
+Segundo \citeonline{pavalenko2017}, o \emph{framework} possui hoje em dia mais de 2500 algoritmos clássicos e de estado da arte em visão computacional, PDI e aprendizado de máquina. Inicialmente o OpenCV começou como uma biblioteca desenvolvida para o Fortran pela Intel em 1999. Porém, esse sistema foi abandonado em meados de 2000 e, posteriormente, tido o suporte de colaboradores da \emph{Willow Garage}, que mais tarde se tornaria na OpenCV Foundation. O objetivo do software é diminuir o \emph{Gap} entre a visão computacional e programadores ao redor do mundo, principalmente quando se trata de aplicações comerciais e fechadas providas pela MathWorks e outras.
+
+Ainda de acordo com \citeonline{pavalenko2017}, o software OpenCV foi escrito em C++, mas pode ter suas aplicações desenvolvidas nas linguagens C, Python, Java e MATLAB. Além de poder ser instalado em plataformas como Windows, Linux, Android e Mac OS. Hoje a mesma se encontra na versão 3.2 encontrada tanto no \href{http://opencv.org/releases.html}{site oficial} quanto no \href{https://github.com/opencv/opencv}{GitHub}. 
+
+\section{\uppercase{System-on-Chip: Raspberry Pi}}
+
+O Raspberry Pi é um microcomputador da família dos \textit{Single Board Computers} (SBC) do tamanho de um cartão de crédito que foi desenvolvido no Reino Unido pela Raspberry Pi Foundation \cite{pajankar2017}.
+
+Ainda de acordo com \citeonline{pajankar2017}, objetivo por trás da criação da criação do Raspberry Pi foi de promover o ensino básico de ciência da computação em escolas de países em desenvolvimento fornecendo uma plataforma de computação de baixo custo. Por isso, a plataforma foi escolhida, visto que o ultimo modelo lançado (em fevereiro de 2016) suporta tanto sistemas operacionais Windows e Linux. Além de ser o sistema de \emph{System-on-Chip} (SoC) de alta performance mais utilizado no mundo.
+
+Na \autoref{tab:rasp_specs}, mostra as especificações do modelo do Raspberry Pi mais recente (que no caso é o modelo 3B) e que será utilizado neste trabalho a fim desenvolver o projeto proposto.
+
+\begin{table}[htb]
+	\ABNTEXfontereduzida
+	\caption[\footnotesize Especificações Técnicas do Raspberry Pi 3 Model B.]{\footnotesize Especificações técnicas do Raspberry Pi 3 Model B.}
+	\label{tab:rasp_specs}
+	\centering
+	\begin{tabular}{c|p{11cm}}
+		\hline
+		\textbf{Item} & \textbf{Descrição} \\
+		\hline \hline
+		\textbf{Processador} & 1.2 GHz Quad-Core ARM Cortex-A53 de 64 bits\\
+		\hline
+		\textbf{Chipset} & Broadcom BCM2387 \\
+		\hline
+		\textbf{Wifi} & 802.11 b/g/n Wireless LAN \\
+		\hline
+		\textbf{LAN} & 10/100 BaseT Ethernet  \\
+		\hline
+		\textbf{Bluetooth} & Bluetooth 4.1 (Bluetooth Clássico e BLE) \\ 
+		\hline
+		\textbf{RAM} & 1GB RAM DDR3 \\
+		\hline
+		\textbf{Portas} & HDMI, P2 para áudio estéreo, Vídeo Composto, Conexão CSI para câmera, Conexão DSI para display de toque e 4 USB \\
+		\hline
+		\textbf{Fonte} & Conexão de fonte bivolt de 5VDC microUSB \\
+		\hline
+		\textbf{Cartão de Memoria} & Suporte a SD Card de até 256GB \\
+		\hline \hline
+	\end{tabular}
+	\legend{\footnotesize Fonte: Próprio autor, 2017 (adaptado de \cite{pajankar2017}).}
+\end{table} 
+
+A \autoref{fig:rasp_specs} demonstra com mais detalhes a placa do Raspberry Pi 3 com a descrição de seus elementos.
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Detalhes do Raspberry Pi 3 Model B.}}   % nome da figura
+	\label{fig:rasp_specs}
+	\includegraphics[width=.8\textwidth]{5.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte:~\citeonline{element2016}.}
+\end{figure}
+
+\section{\uppercase{Considerações Finais}}
+
+O escopo deste capitulo foi apresentar de forma sucinta sobre visão computacional, as etapas do processo de visão computacional até a tomada do resultado, discorrer um pouco sobre a biblioteca OpenCV a ser utilizada nesse trabalho, sobre o microcomputador Raspberry Pi que terá o seu papel como o processador central das tarefas que virão na proposta objetiva desse trabalho.
+
+Este capitulo também servirá de base compreensiva para capítulos posteriores que apresentarão nomenclaturas relacionadas proposição da melhor maneira de resolver os problemas que possam surgir ao longo desse trabalho.

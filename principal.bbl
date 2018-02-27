@@ -1,0 +1,252 @@
+\providecommand{\abntreprintinfo}[1]{%
+ \citeonline{#1}}
+\setlength{\labelsep}{0pt}\begin{thebibliography}{}
+\providecommand{\abntrefinfo}[3]{}
+\providecommand{\abntbstabout}[1]{}
+\abntbstabout{v-1.9.6 }
+
+\bibitem[Agarwal e Goswami 2016]{agarwal2016}
+\abntrefinfo{Agarwal e Goswami}{AGARWAL; GOSWAMI}{2016}
+{AGARWAL, A.; GOSWAMI, S. An efficient algorithm for automatic car plate
+  detection \& recognition. In:  IEEE. \emph{Second International Conference on
+  Computational Intelligence \& Communication Technology (CICT)}. [S.l.], 2016.
+  p. 644--648.}
+
+\bibitem[Alpaydin 2014]{alpaydin2014}
+\abntrefinfo{Alpaydin}{ALPAYDIN}{2014}
+{ALPAYDIN, E. \emph{Introduction to Machine Learning}. 2. ed. [S.l.]: MIT
+  Press, 2014.}
+
+\bibitem[Araújo 2015]{araujo2015}
+\abntrefinfo{Araújo}{ARAúJO}{2015}
+{ARAúJO, E. \emph{Aula de Visão Computacional}. 2015.
+Dispon{\'\i}vel em:
+  \url{http://docslide.com.br/documents/apresentacao-visao-computacional.html}.
+  Acesso em: 07 de maio de 2017.}
+
+\bibitem[Babu e Raghunadh 2016]{babu2016}
+\abntrefinfo{Babu e Raghunadh}{BABU; RAGHUNADH}{2016}
+{BABU, K.~M.; RAGHUNADH, M.~V. Vehicle number plate detection and recognition
+  using bounding box method. In:  IEEE. \emph{2016 International Conference on
+  Advanced Communication Control and Computing Technologies (ICACCCT)}. [S.l.],
+  2016. p. 106--110.}
+
+\bibitem[Bianchi 2006]{bianchi2006}
+\abntrefinfo{Bianchi}{BIANCHI}{2006}
+{BIANCHI, M.~F. de.
+\emph{Extra{\c{c}}{\~a}o de Caracter{\'\i}sticas de Imagens de Faces Humanas
+  Atrav{\'e}s de Wavelets, PCA e IMPCA}.
+Tese (Doutorado) --- Universidade de S{\~a}o Paulo, 2006.}
+
+\bibitem[Brownlee 2014]{brownlee2014}
+\abntrefinfo{Brownlee}{BROWNLEE}{2014}
+{BROWNLEE, J. \emph{An Introduction to Feature Selection}. Machine Learning
+  Mastery, 2014.
+Dispon{\'\i}vel em:
+  \url{http://machinelearningmastery.com/an-introduction-to-feature-selection/}.
+  Acesso em: 08 de maio de 2017.}
+
+\bibitem[Dawson-Howe 2014]{dawson2014}
+\abntrefinfo{Dawson-Howe}{DAWSON-HOWE}{2014}
+{DAWSON-HOWE, K. \emph{A Practical Introduction to Computer Vision with
+  OpenCV}. [S.l.]: John Wiley \& Sons, 2014.}
+
+\bibitem[Detroz 2016]{juliana2016}
+\abntrefinfo{Detroz}{DETROZ}{2016}
+{DETROZ, J.~P. \emph{Visão Computacional}. 2016.
+Dispon{\'\i}vel em:
+  \url{http://www.joinville.udesc.br/portal/professores/andretavares/materiais/CGR0001\_EDO\_visao\_computacional.pdf}.
+  Acesso em: 07 de maio de 2017.}
+
+\bibitem[Duda, Hart e Stork 2001]{duda2001}
+\abntrefinfo{Duda, Hart e Stork}{DUDA; HART; STORK}{2001}
+{DUDA, R.~O.; HART, P.~E.; STORK, D.~G. \emph{Pattern Classification}. 2. ed.
+  [S.l.]: John Wiley \& Sons, 2001.}
+
+\bibitem[Element14 2016]{element2016}
+\abntrefinfo{Element14}{ELEMENT14}{2016}
+{ELEMENT14 (Ed.). \emph{Raspberry Pi 3 Model B Specifications}. Element 14,
+  2016.
+Dispon{\'\i}vel em:
+  \url{https://www.element14.com/community/docs/DOC-80899/l/raspberry-pi-3-model-b-technical-specifications\#}.
+  Acesso em: 04 de agosto de 2016.}
+
+\bibitem[Forsyth e Ponce 2012]{forsyth2012}
+\abntrefinfo{Forsyth e Ponce}{FORSYTH; PONCE}{2012}
+{FORSYTH, D.~A.; PONCE, J. \emph{Computer Vision}: a modern approach. 2. ed.
+  [S.l.]: Pearson, 2012.}
+
+\bibitem[Gabric 2014]{luka2014}
+\abntrefinfo{Gabric}{GABRIC}{2014}
+{GABRIC, L. \emph{Raspberry Pi License Plate Recognition}. LukaGabric Blog,
+  2014.
+Dispon{\'\i}vel em:
+  \url{http://lukagabric.com/raspberry-pi-license-plate-recognition/}. Acesso
+  em: 11 de dezembro de 2016.}
+
+\bibitem[George e Pillai 2016]{george2016}
+\abntrefinfo{George e Pillai}{GEORGE; PILLAI}{2016}
+{GEORGE, A.; PILLAI, V. Vnpr system using artificial neural network. In:
+  \emph{International Conference on Circuit, Power and Computing Technologies
+  (ICCPCT)}. [S.l.: s.n.], 2016.}
+
+\bibitem[Ha e Shakeri 2016]{ha2016}
+\abntrefinfo{Ha e Shakeri}{HA; SHAKERI}{2016}
+{HA, P.~S.; SHAKERI, M. License plate automatic recognition based on edge
+  detection. In:  IEEE. \emph{Artificial Intelligence and Robotics (IRANOPEN)}.
+  [S.l.], 2016. p. 170--174.}
+
+\bibitem[Ikeizumi et al. 2014]{ikeizumie2014}
+\abntrefinfo{Ikeizumi et al.}{IKEIZUMI et al.}{2014}
+{IKEIZUMI, R.~S. et al. An effective sequence of operations for license plates
+  recognition.
+2014.}
+
+\bibitem[Islam, Sharif e Biswas 2015]{islam2015}
+\abntrefinfo{Islam, Sharif e Biswas}{ISLAM; SHARIF; BISWAS}{2015}
+{ISLAM, R.; SHARIF, K.~F.; BISWAS, S. Automatic vehicle number plate
+  recognition using structured elements. In:  IEEE. \emph{2015 IEEE Conference
+  on Systems, Process and Control (ICSPC)}. [S.l.], 2015. p. 44--48.}
+
+\bibitem[Jia, Gonnot e Saniie 2016]{jia2016}
+\abntrefinfo{Jia, Gonnot e Saniie}{JIA; GONNOT; SANIIE}{2016}
+{JIA, Y.; GONNOT, T.; SANIIE, J. Design flow of vehicle license plate reader
+  based on rgb color extractor. In:  IEEE. \emph{2016 IEEE International
+  Conference on Electro Information Technology (EIT)}. [S.l.], 2016. p.
+  0494--0498.}
+
+\bibitem[Khan e Shah 2016]{khan2016}
+\abntrefinfo{Khan e Shah}{KHAN; SHAH}{2016}
+{KHAN, J.~A.; SHAH, M.~A. Car number plate recognition (cnpr) system using
+  multiple template matching. In:  IEEE. \emph{2016 22nd International
+  Conference on Automation and Computing (ICAC)}. [S.l.], 2016. p. 290--295.}
+
+\bibitem[Khan et al. 2016]{khan2016comparison}
+\abntrefinfo{Khan et al.}{KHAN et al.}{2016}
+{KHAN, M.~F. et al. Comparison of various edge detection filters for anpr. In:
+  IEEE. \emph{2016 Sixth International Conference on Innovative Computing
+  Technology (INTECH)}. [S.l.], 2016. p. 306--309.}
+
+\bibitem[ODia 2016]{dia2016}
+\abntrefinfo{ODia}{ODIA}{2016}
+{ODIA (Ed.). \emph{Frota de carros no Brasil mais que dobra em dez anos}. O
+  Dia, 2016.
+Dispon{\'\i}vel em:
+  \url{http://odia.ig.com.br/rio-de-janeiro/observatorio/2016-02-29/frota-de-carros-no-brasil-mais-que-dobra-em-dez-anos.html}.
+  Acesso em: 12 de setembro de 2016.}
+
+\bibitem[ODia 2017]{dia2017}
+\abntrefinfo{ODia}{ODIA}{2017}
+{ODIA (Ed.). \emph{"Roubo de veículos aumenta 40,3\% em relação a fevereiro
+  de 2016"}. O Dia, 2017.
+Dispon{\'\i}vel em:
+  \url{http://odia.ig.com.br/rio-de-janeiro/2017-03-28/roubo-de-veiculos-aumenta-403-em-relacao-a-fevereiro-de-2016-informa-isp.html}.
+  Acesso em: 08 de maio de 2017.}
+
+\bibitem[Pajankar 2017]{pajankar2017}
+\abntrefinfo{Pajankar}{PAJANKAR}{2017}
+{PAJANKAR, A. \emph{Raspberry Pi Image Processing Programming}: Develop
+  real-life examples with python, pillow, and scipy. [S.l.]: Apress, 2017.}
+
+\bibitem[Pavlenko e Kurtaev 2017]{pavalenko2017}
+\abntrefinfo{Pavlenko e Kurtaev}{PAVLENKO; KURTAEV}{2017}
+{PAVLENKO, A.; KURTAEV, D. \emph{About OpenCV}. OpenCV Blog, 2017.
+Dispon{\'\i}vel em: \url{http://opencv.org/about.html}. Acesso em: 09 de maio
+  de 2017.}
+
+\bibitem[Pedrini 2017]{pedrini2017}
+\abntrefinfo{Pedrini}{PEDRINI}{2017}
+{PEDRINI, H. \emph{Introdução ao Processamento Digital de Imagem}. 2017.
+Dispon{\'\i}vel em:
+  \url{http://www.ic.unicamp.br/~helio/disciplinas/MC920/aula\_introducao.pdf}.
+  Acesso em: 07 de maio de 2017.}
+
+\bibitem[Prado e Arcoverde 2017]{prado2017}
+\abntrefinfo{Prado e Arcoverde}{PRADO; ARCOVERDE}{2017}
+{PRADO, G.; ARCOVERDE, L. \emph{"Roubos e furtos a condomínios crescem 172\%
+  em São Paulo"}. G1, 2017.
+Dispon{\'\i}vel em:
+  \url{http://g1.globo.com/sao-paulo/noticia/roubos-e-furtos-a-residencias-crescem-172-em-sao-paulo-aponta-levantamento.ghtml}.
+  Acesso em: 08 de maio de 2017.}
+
+\bibitem[Rede 2017]{ama2017}
+\abntrefinfo{Rede}{REDE}{2017}
+{REDE, A. na (Ed.). \emph{Aumenta os roubos e furtos nos condomínio em
+  Manaus}. Amazônia na Rede, 2017.
+Dispon{\'\i}vel em:
+  \url{http://www.amazonianarede.com.br/aumenta-os-roubos-e-furtos-nos-condominio-em-manaus/}.
+  Acesso em: 08 de maio de 2017.}
+
+\bibitem[Reis 2014]{reis2014}
+\abntrefinfo{Reis}{REIS}{2014}
+{REIS, T. \emph{"Com aumento da frota, país tem 1 automóvel para cada 4
+  habitantes"}. G1, 2014.
+Dispon{\'\i}vel em:
+  \url{http://g1.globo.com/brasil/noticia/2014/03/com-aumento-da-frota-pais-tem-1-automovel-para-cada-4-habitantes.html}.
+  Acesso em: 12 de setembro de 2016.}
+
+\bibitem[Rosebrock 2016]{rosebrock2016}
+\abntrefinfo{Rosebrock}{ROSEBROCK}{2016}
+{ROSEBROCK, A. \emph{k-NN Classifier for Image Classification}. PyImageSearch
+  Blog, 2016.
+Dispon{\'\i}vel em:
+  \url{https://www.pyimagesearch.com/2016/08/08/k-nn-classifier-for-image-classification/}.
+  Acesso em: 09 de maio de 2017.}
+
+\bibitem[Saleem et al. 2016]{saleem2016}
+\abntrefinfo{Saleem et al.}{SALEEM et al.}{2016}
+{SALEEM, N. et al. Automatic license plate recognition using extracted
+  features. In:  IEEE. \emph{2016 4th International Symposium on Computational
+  and Business Intelligence (ISCBI)}. [S.l.], 2016. p. 221--225.}
+
+\bibitem[Sen et al. 2014]{sen2014}
+\abntrefinfo{Sen et al.}{SEN et al.}{2014}
+{SEN, E.~J. et al. Advanced license plate recognition system for car parking.
+  In:  IEEE. \emph{2014 International Conference on Embedded Systems (ICES)}.
+  [S.l.], 2014. p. 162--165.}
+
+\bibitem[Silva 2005]{luiza2005}
+\abntrefinfo{Silva}{SILVA}{2005}
+{SILVA, L. M.~O. da.
+\emph{Uma Aplica{\c{c}}{\~a}o de {\'A}rvores de Decis{\~a}o, Redes Neurais e
+  kNN para a Identifica{\c{c}}{\~a}o de Modelos ARMA N{\~a}o-Sazonais e
+  Sazonais}.
+Tese (Doutorado) --- PUC-Rio, 2005.}
+
+\bibitem[Singh e Roy 2015]{singh2015}
+\abntrefinfo{Singh e Roy}{SINGH; ROY}{2015}
+{SINGH, A.~K.; ROY, S. Anpr indian system using surveillance cameras. In:
+  IEEE. \emph{2015 Eighth International Conference on Contemporary Computing
+  (IC3)}. [S.l.], 2015. p. 291--294.}
+
+\bibitem[Sobral 2003]{sobral2003}
+\abntrefinfo{Sobral}{SOBRAL}{2003}
+{SOBRAL, J.~L. \emph{Segmentação de Imagem}. 2003.
+Dispon{\'\i}vel em:
+  \url{http://gec.di.uminho.pt/lesi/vpc0405/Aula07Segmentação.pdf}. Acesso
+  em: 07 de maio de 2017.}
+
+\bibitem[Solem 2012]{solem2012}
+\abntrefinfo{Solem}{SOLEM}{2012}
+{SOLEM, J.~E. \emph{Programming Computer Vision with Python}: tools and
+  algorithms for analyzing images. [S.l.]: O'Reilly Media, 2012.}
+
+\bibitem[Theodoridis e Koutroumbas 2009]{theodoridis2009}
+\abntrefinfo{Theodoridis e Koutroumbas}{THEODORIDIS; KOUTROUMBAS}{2009}
+{THEODORIDIS, S.; KOUTROUMBAS, K. \emph{Pattern Recognition}. 4. ed. [S.l.]:
+  Academic Press, 2009.}
+
+\bibitem[Trentini, Godoy e Marana 2010]{trentini2010}
+\abntrefinfo{Trentini, Godoy e Marana}{TRENTINI; GODOY; MARANA}{2010}
+{TRENTINI, V.~B.; GODOY, L. A.~T.; MARANA, A.~N. Reconhecimento autom{\'a}tico
+  de placas de ve{\'\i}culos.
+\emph{Anais do VI Workshop de Visão Computacional (WVC)}, p. 267--272, 2010.}
+
+\bibitem[VallapReddy e Sunkari 2014]{vallapReddy2014}
+\abntrefinfo{VallapReddy e Sunkari}{VALLAPREDDY; SUNKARI}{2014}
+{VALLAPREDDY, K.; SUNKARI, S. A new method of license plate recognition system
+  using raspberry pi processor.
+\emph{International Journal of Computer Science information and Eng. Technol.
+  (IJCSIET)}, 2014.}
+
+\end{thebibliography}

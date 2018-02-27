@@ -1,0 +1,159 @@
+\chapter{\textbf{\uppercase{Resultados}}}\label{cap_5}
+
+Neste capítulo serão apresentados os resultados obtidos durante o transcorrer do projeto com base nas etapas do método proposto. 
+
+Com o sistema em funcionamento, a permissão da aquisição da imagem se deu por meio de um sensor ultrassônico que mediu a proximidade das placas numa de média entre 50 a 60 cm de distância. Quando o sensor interpretava a média de distância estipulada, a câmera era acionada e realizava a aquisição da imagem. A mesma é enviada para o próximo passo, processamento digital da imagem, que por sua vez passava a imagem processada para as demais etapas do processo de reconhecimento da placa e dos caracteres.
+
+Para realizar as simulações das placas de carros, foram utilizadas placas impressas em um papel cartão com as características da placa de um veiculo com placa brasileira (formato, fonte e tamanho), conforme a \autoref{fig:placa_simul}.
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Placa usada como exemplo para simular uma placa real.}}   % nome da figura
+	\label{fig:placa_simul}
+	\includegraphics[width=.9\textwidth]{25.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: Próprio autor, 2017.}
+\end{figure}
+
+Para alcançar os resultados no sistema de reconhecimento, cada placa passou por um mínimo de três vezes na execução do sistema para que não houvesse dúvidas na precisão do reconhecimento. A \autoref{fig:placa_capture} mostra o momento em que a \textit{webcam} está capturando a imagem da placa sendo acionada pelo sinal que mede a distância determinada no algoritmo através do sensor ultrassônico.
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Momento da captura da imagem da placa (simulação).}}   % nome da figura
+	\label{fig:placa_capture}
+	\includegraphics[width=.5\textwidth]{26.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: Próprio autor, 2017.}
+\end{figure}
+
+O tempo de execução do sistema foi de aproximadamente 10 segundos entre a aquisição da imagem a abertura do portão. O principal fator nesta demora é o acionamento do sensor da câmera e a captura da imagem (correspondendo a 63\% do tempo de operação). Em outro momento, pode-se ver através da \autoref{fig:placa_hardware} os detalhes da \textit{webcam}, do sensor ultrassônico, do Raspberry e o circuito que interliga o hardware do sistema.
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Detalhes do hardware que compõe o sistema.}}   % nome da figura
+	\label{fig:placa_hardware}
+	\includegraphics[width=.5\textwidth]{27.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: Próprio autor, 2017.}
+\end{figure}
+
+A \autoref{tab:results} mostra em uma coluna as quantidades de caracteres alfanuméricos reconhecidos pelo sistema conforme a distância determinada que foi menor ou igual a 100 cm tendo os melhores resultados na média de 50 a 60 cm de distância da câmera. Além de mostrar a taxa de acerto em termos de quantos caracteres foram corretamente identificados da placa. 
+
+No teste, foram utilizadas 26 placas diferentes nas fontes Arial e \textit{Mandatory}. Essa pontuação serve como base para a comprovação da eficiência do código de abertura do portão. E lembrando também que as condições de iluminação estavam favoráveis, devido a iluminação artificial adicionada a cena.
+
+\begin{table}[htb]
+	\ABNTEXfontereduzida
+	\caption[\footnotesize Resultado do processo de reconhecimento de caracteres.]{\footnotesize Resultado do processo de reconhecimento de caracteres.}
+	\label{tab:results}
+	\begin{tabular}{c|c|c|c|c|c}
+		\hline
+		\textbf{\#} & \textbf{Placa} & \textbf{Distância (cm)} & \textbf{Caracteres Reconhecidos} & \textbf{Qtde. de Acertos} & \textbf{\%} \\
+		\hline \hline
+		1 & RCI-1973 & 56,75 & RCI1973 & 7 & 100\% \\
+		\hline
+		2 & CSC-2013 & 57,61 & CSC2013 & 7 & 100\% \\
+		\hline
+		3 & HQW-5678 & 57,66 & 15678 & 4 & 57\% \\
+		\hline
+		4 & BCD-3456 & 57,38 & BCD3456 & 7 & 100\% \\
+		\hline
+		5 & ABC-1234 & 46,74 & 4BC1234 & 6 & 86\% \\
+		\hline
+		6 & CEL-8142 & 59,01 & CEL8142 & 7 & 100\% \\
+		\hline
+		7 & JBS-2017 & 60,45 & JBS2017 & 7 & 100\% \\
+		\hline
+		8 & GAY-2424 & 58,54 & GAY2424 & 7 & 100\% \\
+		\hline
+		9 & SAP-5470 & 59,94 & SAP5470 & 7 & 100\% \\
+		\hline
+		10 & RIO-2016 & 60,36 & R2016 & 5 & 71\% \\
+		\hline
+		11 & ARG-0316 & 59,98 & ARG0316 & 7 & 100\% \\
+		\hline
+		12 & VEN-8374 & 59,13 & VEN8374 & 7 & 100\% \\
+		\hline
+		13 & EUA-6574 & 69,63 & EU6574 & 6 & 86\% \\
+		\hline
+		14 & BRA-1980 & 58,76 & BRA1980 & 7 & 100\% \\
+		\hline
+		15 & PTZ-1437 & 59,64 & PTZ1437 & 7 & 100\% \\
+		\hline
+		16 & MAN-9128 & 59,52 & JAN9128 & 6 & 86\% \\
+		\hline
+		17 & DIR-6456 & 59,22 & DR6456 & 6 & 86\% \\
+		\hline
+		18 & OAC-7473 & 58,79 & OAC7473 & 7 & 100\% \\
+		\hline
+		19 & JWY-3080 & 58,46 & JY3080 & 6 & 86\% \\
+		\hline
+		20 & NOW-2371 & 58,54 & 2371 & 4 & 57\% \\
+		\hline
+		21 & CMN-7472 & 58,69 & CMN7472 & 7 & 100\% \\
+		\hline
+		22 & NOP-3034 & 58,37 & NOP3034 & 7 & 100\% \\
+		\hline
+		23 & NOR-0316 & 71,85 & NOR0316 & 7 & 100\% \\
+		\hline
+		24 & BEE-4R22 & 65,76 & BEE4R22 & 7 & 100\% \\
+		\hline
+		25 & TWX-2552 & 58,03 & TX2552 & 6 & 86\% \\
+		\hline
+		26 & PHL-7452 & 57,94 & PHL7452 & 7 & 100\% \\
+		\hline
+		\multicolumn{5}{r|}{Total de confiabilidade (caracteres)} & 92,34\% \\
+		\multicolumn{5}{r|}{Total de confiabilidade (placas)} & 65,38\% \\  
+		\hline \hline
+	\end{tabular}
+	\legend{\footnotesize Fonte: Próprio autor, 2017.}
+\end{table} 
+
+Para que se possa demonstrar o resultado do reconhecimento dos caracteres da placa. A \autoref{fig:resullt_screen} mostra como aparece o resultado final para quem supervisiona o sistema em funcionamento.
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Resultado do reconhecimento no sistema.}}   % nome da figura
+	\label{fig:resullt_screen}
+	\includegraphics[width=.7\textwidth]{28.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: Próprio autor, 2017.}
+\end{figure}
+
+Com base nos custos do projeto foi possível realizar uma comparação de valores com um outro sistema prontos no mercado e nacional da Intelbrás OCR LPR-ITS, visto na \autoref{fig:lpr}. A \autoref{tab:compar} demonstra o comparativo de preços do mesmo sistema em sites/estabelecimentos diferentes no Brasil.
+
+\begin{figure}[htb]
+	\centering
+	\caption{{\footnotesize Sistema de reconhecimento de placas veiculares da Intelbrás.}}   % nome da figura
+	\label{fig:lpr}
+	\includegraphics[width=.6\textwidth]{29.pdf}
+	
+	%\legend{Fonte: \citeonline{Vestibulando_2016}.}   % outra opção de legenda da foto
+	{\footnotesize Fonte: Google Imagens, 2017.}
+\end{figure}
+
+\begin{table}[htb]
+	\ABNTEXfontereduzida
+	\caption[\footnotesize Comparação de valores.]{\footnotesize Comparação de valores de produtos disponíveis no mercado atual.}
+	\label{tab:compar}
+	\centering
+	\begin{tabular}{c|c|c|c}
+		\hline
+		\textbf{Site/Estabelecimento} & \textbf{Produto} & \textbf{Fabricante} & \textbf{Preço encontrado} \\
+		\hline \hline
+		Casas Bahia & \multirow{3}{*}{\textbf{OCR LPR-ITS}} & \multirow{3}{*}{\textbf{Intelbrás}} & R\$ 26.145,00 \\
+ 		\cline{1-1} 
+ 		\cline{4-4}
+ 		MercadoLivre & & & R\$ 28.884,00 \\
+ 		\cline{1-1} 
+ 		\cline{4-4}
+ 		FX Biometria & & & R\$ 24.900,00 \\
+		\hline \hline
+	\end{tabular}
+	\legend{\footnotesize Fonte: Próprio autor, 2017.}
+\end{table} 
+
+De acordo com a \autoref{tab:compar}, tomou-se como base o valor mais baixo que foi de R\$ 24.900,00. A economia do sistema desenvolvido ficou em torno de 97\% mais baixo que em relação ao preço de mercado na FX Biometria. Com essa comparação pode se ter uma ideia de que o projeto torna-se economicamente viável em uma possível implantação. 

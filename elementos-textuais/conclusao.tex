@@ -1,0 +1,29 @@
+% ----------------------------------------------------------
+% Conclusão (outro exemplo de capítulo sem numeração e presente no sumário)
+% ----------------------------------------------------------
+% \chapter*[Conclusão]{Conclusão}
+% \addcontentsline{toc}{chapter}{Conclusão}
+% ----------------------------------------------------------
+
+O proposito deste trabalho foi o desenvolver um sistema de reconhecimento automático da placa de matricula de carro utilizando reconhecimento de padrões para melhoria de segurança em portões eletrônicos.
+
+Com esta finalidade o projeto foi concebido para fazer com que através de uma Webcam comum, um sensor ultrassônico, um pequeno motor DC (em um drive de CDROM) e um microcomputador de pequeno porte que pudessem simular e executar um sistema de reconhecimento de padrão e controlar todo o hardware empregado no sistema, podendo ser utilizado para controlar o acesso de entrada em ambientes fechados.
+
+Para a criação do sistema foram implementados e adaptados algoritmos de reconhecimento de padrão e o de acionamento de abertura e fechamento do portão, foi feito um protótipo simples com os hardwares já descritos.
+
+O sistema de reconhecimento em alguns momentos apresentou falhas ao tentar reconhecer caracteres como por exemplo a letra 'W'. A distância também foi um fator que contribuiu muito para a ineficácia do reconhecimento e o posicionamento da câmera em certos ângulos (maiores que 30\textdegree).
+ 
+A câmera assim como o sensor têm que estar em uma posição estável sem movimentos ou vibrações. Notou-se que quando a haste da câmera junto com o sensor era movida, havia falha ou no sensor ou na aquisição da imagem. Outro fator importante que se pode perceber no comportamento do sistema, é que geralmente as falhas se davam em relação as letras e minimamente nos números. Outro problema identificado foi que a fonte utilizada para o treinamento do algoritmo de reconhecimento há de ser a mesma fonte que se deseja identificar, inicialmente quando foram praticados os testes, as fontes utilizadas nas placas eram da fonte \emph{Mandatory} (que é o padrão de fonte em placas veiculares no Brasil) e com essa fonte o sistema apresentou muitas falhas. Ao troca-la pela fonte Arial o sistema passou a reconhecer melhor os caracteres na placa. 	Pode-se então constatar que havia sido feito um treinamento no classificador kNN com a fonte Arial.
+
+Na questão da identificação da área da placa o sistema conseguiu identificar em 100\% a região da área de placa. Porém como as placas utilizadas foram impressas em folhas de papel cartão para simular uma placa real, essas placas seguiram um mesmo padrão, tornando assim mais fáceis de identifica-las, o que talvez não aconteceria em uma situação real por causa do posicionamento das placas nos carros.
+
+Em outra situação importante, destaca-se a velocidade de execução do sistema cujo o tempo de execução foi aceitável, sendo executado numa média de 10 segundos em todo o processo.
+
+Para trabalhos futuros é preciso fazer algumas melhorias como implementar um banco de dados no sistema, fazer uma melhoria no treinamento do classificador kNN para que se possa resolver essas falhas no reconhecimento de caracteres, testar outras bibliotecas de reconhecimento de caracteres online, como por exemplo o uso do \textit{Google Tesseract OCR}, ou outros classificadores que sejam convenientes ao projeto.
+
+Apesar deste problemas levantados na execução do sistema, os resultados comprovam uma taxa de acerto de mais de 92\% que constitui uma boa aplicação em termos de reconhecimento. Levando assim, o projeto a um sucesso razoável e capaz de cumprir os seus objetivos. 
+
+Por fim, testar o sistema em uma situação real após a consolidação dos testes no protótipo e após todas as melhorias e ajustes serem realizados.
+
+
+
